@@ -2,6 +2,7 @@ package org.wcci.apimastery.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.wcci.apimastery.Repository.SongRepository;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,15 +16,13 @@ public class Song {
     private String name;
     private int duration;
     @ManyToOne
-    @JsonIgnore
     private Album album;
     @OneToMany (mappedBy = "song")
     private Collection<Rating> ratings;
 
-    public Song(String name, int duration, Album album) {
+    public Song(String name, int duration) {
         this.name = name;
         this.duration = duration;
-        this.album = album;
     }
 
     public Song(){}
@@ -36,10 +35,6 @@ public class Song {
         return duration;
     }
 
-    public Album getAlbum() {
-        return album;
-    }
-
     public Collection<Rating> getRatings() {
         return ratings;
     }
@@ -48,12 +43,12 @@ public class Song {
         return id;
     }
 
+    public Album getAlbum() {
+        return album;
+    }
 
     public void changeName(String newName){
         name = newName;
-    }
-    public void addAlbum(Album newAlbum){
-        album = newAlbum;
     }
 
 }

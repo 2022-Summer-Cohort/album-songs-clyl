@@ -29,26 +29,25 @@ public class SongController {
     }
 
 
-    @PostMapping("/api/songs/{id}")
-    public Iterable<Song> addSong(@RequestBody Song songToAdd, @PathVariable Long id){
-        Album newAlbum = albumRepo.findById(id).get();
-        songToAdd.addAlbum(newAlbum);
+    @PostMapping("/api/songs")
+    public Song addSong(@RequestBody Song songToAdd){
         songRepo.save(songToAdd);
-        return songRepo.findAll();
+        return songToAdd;
     }
 
-    @PutMapping("/api/songs")
-        public Iterable<Song> editSong(@RequestBody Song songToEdit) {
-        if (songToEdit.getId() != null) {
-            songRepo.save(songToEdit);
-        }
-        return songRepo.findAll();
-    }
+//    @PutMapping("/api/songs")
+//        public Iterable<Song> editSong(@RequestBody Song songToEdit) {
+//        if (songToEdit.getId() != null) {
+//            songRepo.save(songToEdit);
+//        }
+//        return songRepo.findAll();
+//    }
 
     @PatchMapping("/api/songs/{id}/name")
     public Song songToChangeName(@RequestBody String newName, @PathVariable Long id){
         Song songToChange = songRepo.findById(id).get();
         songToChange.changeName(newName);
+        songRepo.save(songToChange);
         return songToChange;
     }
 

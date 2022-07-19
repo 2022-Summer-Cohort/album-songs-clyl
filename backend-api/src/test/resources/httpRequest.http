@@ -4,10 +4,33 @@ Accept: application/json
 
 ### get a song by id
 
-GET http://localhost:8080/api/songs/1
+# GET http://localhost:8080/api/songs/5
+# Content-Type: application/json
+
+## get all albums
+
+GET http://localhost:8080/api/albums
 Content-Type: application/json
 
-POST http://localhost:8080/api/song
+### get album by id
+GET http://localhost:8080/api/albums/17
 Content-Type: application/json
 
-{"name":"chans song","duration":"100", "album":{"id": 1}}
+### add song to album
+POST http://localhost:8080/api/songs/37
+Content-Type: application/json
+
+{"name":"asdf", "duration": 200}
+
+###add album
+POST http://localhost:8080/api/albums
+Content-Type: application/json
+
+{"title":"asdf", "imgUrl": "asdf.jpg", "recordLabel":"asdf"}
+
+### change name of song
+POST  http://localhost:8080//api/songs
+Content-Type: application/json
+
+{"name":"asdf","imgUrl":"asdf"}
+
