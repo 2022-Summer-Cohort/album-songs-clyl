@@ -1,12 +1,12 @@
-package Model;
+package org.wcci.apimastery.Model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 public class Rating {
@@ -17,6 +17,7 @@ public class Rating {
     private String review;
     private int rating;
     @ManyToOne
+    @JsonIgnore
     private Song song;
 
     public Rating(String review, int rating, Song song) {
@@ -43,16 +44,4 @@ public class Rating {
         return id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Rating rating1 = (Rating) o;
-        return rating == rating1.rating && Objects.equals(review, rating1.review) && Objects.equals(song, rating1.song);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(review, rating, song);
-    }
 }

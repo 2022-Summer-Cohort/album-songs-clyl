@@ -1,7 +1,10 @@
-package Model;
+package org.wcci.apimastery.Model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -12,17 +15,15 @@ public class Song {
     private String name;
     private int duration;
     @ManyToOne
+    @JsonIgnore
     private Album album;
-    @ManyToOne
-    private Artist artist;
     @OneToMany (mappedBy = "song")
     private Collection<Rating> ratings;
 
-    public Song(String name, int duration, Album album, Artist artist) {
+    public Song(String name, int duration, Album album) {
         this.name = name;
         this.duration = duration;
         this.album = album;
-        this.artist = artist;
     }
 
     public Song(){}
@@ -39,10 +40,6 @@ public class Song {
         return album;
     }
 
-    public Artist getArtist() {
-        return artist;
-    }
-
     public Collection<Rating> getRatings() {
         return ratings;
     }
@@ -50,5 +47,14 @@ public class Song {
     public Long getId() {
         return id;
     }
+
+
+    public void changeName(String newName){
+        name = newName;
+    }
+    public void addAlbum(Album newAlbum){
+        album = newAlbum;
+    }
+
 }
 
