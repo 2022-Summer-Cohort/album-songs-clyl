@@ -35,4 +35,12 @@ public class AlbumController {
         albumRepo.save(albumToAdd);
         return albumToAdd;
     }
+    @PostMapping("/api/albums/{id}")
+    public Song addToAlbum(@RequestBody Song songToAdd, @PathVariable Long id){
+        Album albumToAppend = albumRepo.findById(id).get();
+        albumToAppend.addSongToAlbum(songToAdd);
+        albumRepo.save(albumToAppend);
+
+        return songToAdd;
+    }
 }

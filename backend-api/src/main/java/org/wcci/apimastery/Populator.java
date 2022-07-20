@@ -52,14 +52,6 @@ public class Populator implements CommandLineRunner{
         songRepo.save(champion);
         songRepo.save(goodLife);
 
-        Song[] graduationSongs = {goodLife, goodMorning, barryBonds, champion};
-
-//        Collection<Song> graduationSongs = new ArrayList<>(4);
-//        graduationSongs.add(goodMorning);
-//        graduationSongs.add(barryBonds);
-//        graduationSongs.add(champion);
-//        graduationSongs.add(goodLife);
-
 
         songRepo.save(blackBird);
         songRepo.save(rockyRacoon);
@@ -76,10 +68,10 @@ public class Populator implements CommandLineRunner{
         songRepo.save(habitat);
         songRepo.save(love);
 
-        Album graduation = new Album("Graduation", "/images/albumCover.jpg", "Def Jam Roc-A-Fella", graduationSongs);
-        Album whiteAlbum = new Album("The White Album", "/images/albumCover.jpg", "Apple", graduationSongs);
-        Album incredible = new Album("The Incredible True Story", "/images/albumCover.jpg", "Def Jam", graduationSongs);
-        Album blackOnBothSides = new Album("Black on Both Sides", "/images/albumCover.jpg", "Rawkus", graduationSongs);
+        Album graduation = new Album("Graduation", "/images/albumCover.jpg", "Def Jam Roc-A-Fella", goodMorning, barryBonds, champion, goodLife);
+        Album whiteAlbum = new Album("The White Album", "/images/albumCover.jpg", "Apple", blackBird, rockyRacoon, ObLaDi, ussr);
+        Album incredible = new Album("The Incredible True Story", "/images/albumCover.jpg", "Def Jam", fadeAway, runIt, likeWoah, stainless);
+        Album blackOnBothSides = new Album("Black on Both Sides", "/images/albumCover.jpg", "Rawkus", mathematics, got, habitat, love);
 
         albumRepo.save(graduation);
         albumRepo.save(whiteAlbum);

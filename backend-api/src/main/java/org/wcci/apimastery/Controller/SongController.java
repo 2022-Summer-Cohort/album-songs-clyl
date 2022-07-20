@@ -35,14 +35,6 @@ public class SongController {
         return songToAdd;
     }
 
-//    @PutMapping("/api/songs")
-//        public Iterable<Song> editSong(@RequestBody Song songToEdit) {
-//        if (songToEdit.getId() != null) {
-//            songRepo.save(songToEdit);
-//        }
-//        return songRepo.findAll();
-//    }
-
     @PatchMapping("/api/songs/{id}/name")
     public Song songToChangeName(@RequestBody String newName, @PathVariable Long id){
         Song songToChange = songRepo.findById(id).get();

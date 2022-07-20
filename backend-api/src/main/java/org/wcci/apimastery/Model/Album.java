@@ -15,7 +15,6 @@ public class Album {
     private Long id;
     private String title;
     @OneToMany(mappedBy = "album")
-    @JsonIgnore
     private Collection<Song> songs;
     private String recordLabel;
 
@@ -32,6 +31,10 @@ public class Album {
     public Album() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -39,7 +42,6 @@ public class Album {
     public Collection<Song> getSongs() {
         return songs;
     }
-
 
     public String getRecordLabel() {
         return recordLabel;
@@ -49,12 +51,9 @@ public class Album {
         return imgUrl;
     }
 
-    public Long getId() {
-        return id;
+    public void addSongToAlbum(Song songToAdd){
+        songs.add(songToAdd);
     }
-
-
-
 }
 
 

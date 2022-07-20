@@ -16,6 +16,7 @@ public class Song {
     private String name;
     private int duration;
     @ManyToOne
+    @JsonIgnore
     private Album album;
     @OneToMany (mappedBy = "song")
     private Collection<Rating> ratings;
