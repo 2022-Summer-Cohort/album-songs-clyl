@@ -17,7 +17,6 @@ public class Rating {
     private String review;
     private int rating;
     @ManyToOne
-    @JsonIgnore
     private Song song;
 
     public Rating(String review, int rating, Song song) {
@@ -43,5 +42,7 @@ public class Rating {
     public Long getId() {
         return id;
     }
+
+
 
 }

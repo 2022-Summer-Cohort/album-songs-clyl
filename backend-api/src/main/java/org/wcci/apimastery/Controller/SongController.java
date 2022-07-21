@@ -1,8 +1,10 @@
 package org.wcci.apimastery.Controller;
 
 import org.wcci.apimastery.Model.Album;
+import org.wcci.apimastery.Model.Rating;
 import org.wcci.apimastery.Model.Song;
 import org.wcci.apimastery.Repository.AlbumRepository;
+import org.wcci.apimastery.Repository.RatingRepository;
 import org.wcci.apimastery.Repository.SongRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,16 +14,22 @@ public class SongController {
 
     private SongRepository songRepo;
     private AlbumRepository albumRepo;
+    private RatingRepository ratingRepo;
 
-    public SongController(SongRepository songRepo, AlbumRepository albumRepo ){
+    public SongController(SongRepository songRepo, AlbumRepository albumRepo, RatingRepository ratingRepo){
         this.songRepo = songRepo;
         this.albumRepo = albumRepo;
+        this.ratingRepo = ratingRepo;
     }
+
+//    get all songs
 
     @GetMapping("/api/songs")
     public Iterable<Song> retrieveAllSongs(){
         return songRepo.findAll();
     }
+
+//    get song by id
 
     @GetMapping("/api/songs/{id}")
     public Song retrieveSongById(@PathVariable Long id){
@@ -29,18 +37,30 @@ public class SongController {
     }
 
 
-    @PostMapping("/api/songs")
-    public Song addSong(@RequestBody Song songToAdd){
-        songRepo.save(songToAdd);
-        return songToAdd;
-    }
-
     @PatchMapping("/api/songs/{id}/name")
-    public Song songToChangeName(@RequestBody String newName, @PathVariable Long id){
+    public Song songToChangeName(@RequestBody String newName,@RequestBody Song songToAdd, @PathVariable Long id){
         Song songToChange = songRepo.findById(id).get();
         songToChange.changeName(newName);
         songRepo.save(songToChange);
         return songToChange;
+    }
+
+    @PostMapping("/api/songs/{id}/addAlbum")
+    public Album addToAlbum(@RequestBody Album newAlbum, @PathVariable Long id){
+        Song song1 = songRepo.findById(id).get();
+        song1.addAlbum(newAlbum);
+        return newAlbum;
+
+    }
+
+    @PostMapping("/api/songs/{id}/addRating")
+    public Rating addRating(@RequestBody Rating ratingToAdd, @PathVariable Long id){
+        ratingRepo.save(ratingToAdd);
+        Song songToRate = songRepo.findById(id).get();
+        songToRate.addRating(ratingToAdd);
+        songRepo.save(songToRate);
+        return ratingToAdd;
+
     }
 
 

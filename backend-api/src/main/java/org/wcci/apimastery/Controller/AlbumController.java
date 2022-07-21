@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.wcci.apimastery.Model.Album;
 import org.wcci.apimastery.Model.Song;
 import org.wcci.apimastery.Repository.AlbumRepository;
+import org.wcci.apimastery.Repository.RatingRepository;
 import org.wcci.apimastery.Repository.SongRepository;
 
 import java.nio.file.Path;
@@ -14,10 +15,12 @@ public class AlbumController {
 
     private SongRepository songRepo;
     private AlbumRepository albumRepo;
+    private RatingRepository ratingRepo;
 
-    public AlbumController(SongRepository songRepo, AlbumRepository albumRepo) {
+    public AlbumController(SongRepository songRepo, AlbumRepository albumRepo, RatingRepository ratingRepo) {
         this.songRepo = songRepo;
         this.albumRepo = albumRepo;
+        this.ratingRepo = ratingRepo;
     }
 
     @GetMapping("/api/albums")
@@ -35,12 +38,26 @@ public class AlbumController {
         albumRepo.save(albumToAdd);
         return albumToAdd;
     }
-    @PostMapping("/api/albums/{id}")
-    public Song addToAlbum(@RequestBody Song songToAdd, @PathVariable Long id){
-        Album albumToAppend = albumRepo.findById(id).get();
-        albumToAppend.addSongToAlbum(songToAdd);
-        albumRepo.save(albumToAppend);
+    @PostMapping("/api/albums/{id}/addAlbum")
+    public Album addToAlbum(@RequestBody Album newAlbum, @PathVariable Long id){
+        Song song1 = songRepo.findById(id).get();
+        song1.addAlbum(newAlbum);
+        return newAlbum;
 
-        return songToAdd;
+    }
+    @PatchMapping("/api/albums/{id}/title")
+    public Album albumToChangeName(@RequestBody String newName, @PathVariable Long id){
+        Album albumToChange = albumRepo.findById(id).get();
+        albumToChange.changeTitle(newName);
+        albumRepo.save(albumToChange);
+        return albumToChange;
+    }
+
+    @PostMapping("/api/albums/{id}/addSong")
+    public Album addSong(@RequestBody Song songToAdd, @PathVariable Long id){
+        Album newAlbum = albumRepo.findById(id).get();
+        songToAdd.addAlbum(newAlbum);
+        songRepo.save(songToAdd);
+        return newAlbum;
     }
 }

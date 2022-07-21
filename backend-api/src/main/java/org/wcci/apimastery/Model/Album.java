@@ -20,11 +20,10 @@ public class Album {
 
     private String imgUrl;
 
-    public Album(String title, String imgUrl, String recordLabel, Song...songs) {
+    public Album(String title, String imgUrl, String recordLabel) {
         this.title = title;
         this.imgUrl = imgUrl;
         this.recordLabel = recordLabel;
-        this.songs = Arrays.asList(songs);
 
     }
 
@@ -51,8 +50,11 @@ public class Album {
         return imgUrl;
     }
 
-    public void addSongToAlbum(Song songToAdd){
-        songs.add(songToAdd);
+//    public void addSongToAlbum(Song songToAdd){
+//        songs.add(songToAdd);
+//    }
+    public void changeTitle(String newTitle){
+        title = newTitle;
     }
 }
 
