@@ -58,3 +58,11 @@ POST    http://localhost:8080//api/songs/5/addRating
 Content-Type: application/json
 
 {"review":"i didnt like it", "rating": 1}
+
+# change albums recordLabel
+Patch http://localhost:8080/api/albums/1
+
+
+## dekete a ablums with the given id
+Delete http://localhost:8080/api/albums/1
+content-type: application/jason
