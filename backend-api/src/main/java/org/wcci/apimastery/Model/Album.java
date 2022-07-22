@@ -56,6 +56,10 @@ public class Album {
     public void changeTitle(String newTitle){
         title = newTitle;
     }
+
+    public void deleteAlbums(String newRecordLabel){
+        recordLabel = newRecordLabel;
+    }
 }
 
 
