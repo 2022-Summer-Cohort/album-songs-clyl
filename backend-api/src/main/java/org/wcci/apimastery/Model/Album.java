@@ -14,7 +14,7 @@ public class Album {
     @GeneratedValue
     private Long id;
     private String title;
-    @OneToMany(mappedBy = "album")
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL,orphanRemoval = true)
     private Collection<Song> songs;
     private String recordLabel;
 

@@ -58,3 +58,5 @@ POST    http://localhost:8080//api/songs/5/addRating
 Content-Type: application/json
 
 {"review":"i didnt like it", "rating": 1}
+
+DELETE http://localhost:8080//api/songs/5/addRating
