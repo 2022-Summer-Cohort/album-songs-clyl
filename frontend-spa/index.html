@@ -4,16 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
     <title>Module 5 Project</title>
 </head>
 
 <body>
     <div class="anchor">
+        <nav class="links">
+            <ul>
+                <li><a
+                        href="https://docs.google.com/document/d/e/2PACX-1vScBo_DhUTu02hEnIoPkQEz3gq1Ilm0Kgje6ls7NBAThvMfymlg-rD0C34ukzpPlV9M8uO9EYOVHPe6/pub">Instructions</a>
+                </li>
+                <li><a href="https://github.com/2022-Summer-Cohort/album-songs-clyl">Github</a></li>
+                <li>Developers</li>
+            </ul>
+        </nav>
+
+        <h1>CYLY Album Collection</h1>
+
+        <nav>
+            <div>Albums</div>
+        </nav>
+        <br>
         <div class="container">
-
+            <div class="album-name">Name</div>
+            <div class="album-cover">Cover</div>
+            <div class="album-artist">Artist</div>
         </div>
-    </div>
-<script src="./src/js/app.js"></script>
-</body>
 
+        <h4>Add a song:</h4>
+        <form action="">
+
+
+            <label for="songName">Name:</label>
+            <input type="text" id="songName" name="songName">
+
+            <label for="songDuration">Duration:</label>
+            <input type="text" id="songDuration" name="songDuration">
+
+            <input type="text" id="songComment" placeholder="Add comment here">
+
+            <label for="songRating">Rate this song out of 5:</label>
+            <select id="songRating" name="songRating" size="6">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+
+            <input type="submit" value="Submit song">
+
+        </form>
+
+        <footer></footer>
+
+    </div>
+    <script src="./src/js/app.js" type="module"></script>
+</body>
 </html>
