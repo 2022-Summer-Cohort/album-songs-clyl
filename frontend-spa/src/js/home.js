@@ -1,13 +1,13 @@
 export default function home(albums){
     return `
-    <main class="main-content">
-    <section class ="album-library">
+    <main class="albums-container">
     ${albums.map(album =>{
         return `
         <div class ="album">
-        <h2> class="album-title">${album.title}</h2>
+        <img class="album-cover" src="./src${album.imgUrl}">
         <input type="hidden" class="id_field" value="${album.id}">
-        <h3> class="album-recordLabel">${album.recordLabel}</h3>
+        <h2 class="album-title">${album.title}</h2>
+        <h3 class="album-recordLabel">${album.recordLabel}</h3>
 
         <input type="text" class="update-title" placeholder="New Album Title">
         <button class="update-button">Update Title</button>
@@ -15,7 +15,6 @@ export default function home(albums){
         `
     }).join("")
 }
-    </section>
     </main>
     `
 }

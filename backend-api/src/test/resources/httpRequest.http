@@ -30,7 +30,7 @@ Content-Type: application/json
 {"title":"asdf", "imgUrl": "asdf.jpg", "recordLabel":"asdf"}
 
 ### change name of song
-PATCH   http://localhost:8080//api/songs/6/name
+PATCH   http://localhost:8080//api/songs/5/name
 Content-Type: application/json
 
 Good Life
@@ -54,9 +54,9 @@ Content-Type: application/json
 
 ### add rating
 
-POST    http://localhost:8080//api/songs/5/addRating
+POST    http://localhost:8080//api/ratings/5
 Content-Type: application/json
 
 {"review":"i didnt like it", "rating": 1}
 
-DELETE http://localhost:8080//api/songs/5/addRating
+

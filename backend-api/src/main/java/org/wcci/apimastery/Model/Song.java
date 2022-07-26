@@ -20,7 +20,6 @@ public class Song {
     @JsonIgnore
     private Album album;
     @OneToMany (mappedBy = "song")
-    @JsonIgnore
     private Collection<Rating> ratings;
 
     public Song(String name, int duration, Album album) {
