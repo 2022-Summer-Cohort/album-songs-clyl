@@ -1,7 +1,7 @@
 export default function header(){
-    return`
+    return `
     <header class = "main-header">
-        <h1 class = "main-header__title"></h1>
+        <h1 class = "main-header__title">Header</h1>
     </header>
     `
 }

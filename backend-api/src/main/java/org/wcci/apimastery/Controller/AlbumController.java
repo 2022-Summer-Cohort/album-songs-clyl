@@ -39,10 +39,10 @@ public class AlbumController {
         return albumToAdd;
     }
     @PostMapping("/api/albums/{id}/addAlbum")
-    public Album addToAlbum(@RequestBody Album newAlbum, @PathVariable Long id){
+    public Iterable<Album> addToAlbum(@RequestBody Album newAlbum, @PathVariable Long id){
         Song song1 = songRepo.findById(id).get();
         song1.addAlbum(newAlbum);
-        return newAlbum;
+        return albumRepo.findAll();
 
     }
     @PostMapping("/api/albums/{id}/addSong")
@@ -53,30 +53,24 @@ public class AlbumController {
         return newAlbum;
     }
     @PatchMapping("/api/albums/{id}/title")
-    public Album albumToChangeName(@RequestBody String newName, @PathVariable Long id){
+    public Iterable<Album> albumToChangeName(@RequestBody String newName, @PathVariable Long id){
         Album albumToChange = albumRepo.findById(id).get();
         albumToChange.changeTitle(newName);
         albumRepo.save(albumToChange);
-        return albumToChange;
+        return albumRepo.findAll();
     }
 
     @DeleteMapping("/api/albums/{id}")
-    public Iterable<Album> deleteAlbumById(@PathVariable Long id){
-        albumRepo.deleteById(id);
-        return albumRepo.findAll();
-    }
-    
-    DeleteMapping("/api/albums/{id}")
-    public Iterable<album> deleteAlbumsById(@PathVariable Long id){
+    public Iterable<Album> deleteAlbumsById(@PathVariable Long id){
         albumRepo.deleteById(id);
         return albumRepo.findAll();
     }
 
-    @PatchMapping("/api/albums/{id}")
-    public Iterable<album> changeRecodLabel(@PathVariable Long id, @RequestBody String recordLabel){
-        album album = albumRepo.findById(id).get();
-        album.changeRecodLabel(recordLabel);
-        albumRepo.save(album);
-        return albumRepo.findAll();
-    }
+//    @PatchMapping("/api/albums/{id}")
+//    public Iterable<Album> changeRecodLabel(@PathVariable Long id, @RequestBody String recordLabel){
+//        Album album = albumRepo.findById(id).get();
+//        album.changeRecodLabel(recordLabel);
+//        albumRepo.save(album);
+//        return albumRepo.findAll();
+//    }
 }

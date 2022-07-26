@@ -33,8 +33,10 @@ public class RatingController {
     }
 
 
-    @PostMapping("/api/ratings")
-    public Rating addRating(@RequestBody Rating ratingToAdd){
+    @PostMapping("/api/ratings/{id}")
+    public Rating addRating(@RequestBody Rating ratingToAdd, @PathVariable Long id){
+        Song songToRate = songRepo.findById(id).get();
+        ratingToAdd.addSongToRating(songToRate);
         ratingRepo.save(ratingToAdd);
         return ratingToAdd;
     }
