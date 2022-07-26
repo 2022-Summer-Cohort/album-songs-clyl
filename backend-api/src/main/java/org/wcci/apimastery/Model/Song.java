@@ -19,7 +19,7 @@ public class Song {
     @ManyToOne
     @JsonIgnore
     private Album album;
-    @OneToMany (mappedBy = "song")
+    @OneToMany (mappedBy = "song", cascade = CascadeType.ALL,orphanRemoval = true)
     private Collection<Rating> ratings;
 
     public Song(String name, int duration, Album album) {

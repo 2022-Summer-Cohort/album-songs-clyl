@@ -11,6 +11,7 @@ export default function home(albums){
 
         <input type="text" class="update-title" placeholder="New Album Title">
         <button class="update-button">Update Title</button>
+        <button class="delete-button">Delete Album</button>
         </div>
         `
     }).join("")

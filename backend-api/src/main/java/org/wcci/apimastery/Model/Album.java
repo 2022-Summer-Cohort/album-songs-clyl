@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -59,6 +60,19 @@ public class Album {
 
     public void deleteAlbums(String newRecordLabel){
         recordLabel = newRecordLabel;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Album album = (Album) o;
+        return Objects.equals(id, album.id) && Objects.equals(title, album.title) && Objects.equals(songs, album.songs) && Objects.equals(recordLabel, album.recordLabel) && Objects.equals(imgUrl, album.imgUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, songs, recordLabel, imgUrl);
     }
 }
 

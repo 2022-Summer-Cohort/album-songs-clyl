@@ -48,11 +48,21 @@ public class SongController {
     }
 
     @PatchMapping("/api/songs/{id}/name")
-    public Song songToChangeName(@RequestBody String newName, @PathVariable Long id){
+    public Album songToChangeName(@RequestBody String newName, @PathVariable Long id){
         Song songToChange = songRepo.findById(id).get();
+        Album newAlbum = songToChange.getAlbum();
         songToChange.changeName(newName);
         songRepo.save(songToChange);
-        return songToChange;
+        albumRepo.save(newAlbum);
+        return newAlbum;
+    }
+    @DeleteMapping("/api/songs/{id}")
+    public Album deleteSongById(@PathVariable Long id){
+        Song songToDelete = songRepo.findById(id).get();
+        Album newAlbum = songToDelete.getAlbum();
+        songRepo.deleteById(id);
+        albumRepo.save(newAlbum);
+        return newAlbum;
     }
 
 

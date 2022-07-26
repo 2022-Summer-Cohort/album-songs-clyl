@@ -61,16 +61,10 @@ public class AlbumController {
     }
 
     @DeleteMapping("/api/albums/{id}")
-    public Iterable<Album> deleteAlbumById(@PathVariable Long id){
+    public Iterable<Album> deleteAlbumsById(@PathVariable Long id){
         albumRepo.deleteById(id);
         return albumRepo.findAll();
     }
-    
-//    @DeleteMapping("/api/albums/{id}")
-//    public Iterable<Album> deleteAlbumsById(@PathVariable Long id){
-//        albumRepo.deleteById(id);
-//        return albumRepo.findAll();
-//    }
 
 //    @PatchMapping("/api/albums/{id}")
 //    public Iterable<Album> changeRecodLabel(@PathVariable Long id, @RequestBody String recordLabel){

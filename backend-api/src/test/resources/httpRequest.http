@@ -49,14 +49,22 @@ Content-Type: application/json
 
 ### rating by id
 
-GET   http://localhost:8080//api/ratings/21
+GET   http://localhost:8080//api/ratings/30
 Content-Type: application/json
 
 ### add rating
 
-POST    http://localhost:8080//api/ratings/5
+POST    http://localhost:8080//api/ratings/6
 Content-Type: application/json
 
 {"review":"i didnt like it", "rating": 1}
 
+### delete album by id
 
+DELETE http://localhost:8080//api/albums/1
+Content-Type: application/json
+
+###delete song by id
+
+DELETE http://localhost:8080//api/songs/5
+Content-Type: application/json

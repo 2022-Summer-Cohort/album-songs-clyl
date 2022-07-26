@@ -11,7 +11,11 @@ export default function albumsView(album){
                             return `
                                 <div class="song">
                                 <img class="album-cover" src="./src${album.imgUrl}">
+                                <input type="hidden" class="id_field" value="${song.id}">
                                     <h3 class="song-title">${song.name}</h3>
+                                    <button class="deleteSongButton">delete song</button>
+                                    <input type="text" placeholder="New Song Name" class="newNameInput" \>
+                                    <button class="changeNameButton">Change Song Name</button>
                                 </div>
                             `
                         }).join("")
@@ -19,7 +23,7 @@ export default function albumsView(album){
                 </div>
                 <div class="NewSongDiv">
                     <input type="text" placeholder="Song Name" class="songNameInput" \>
-                    <input type="text" placeholder="Song Description" class="songDescriptionInput" \>
+                    <input type="number" placeholder="Song Duration" class="songDurationInput" \>
                     
                     <button class="addsongButton">Add song</button>
                 </div>
