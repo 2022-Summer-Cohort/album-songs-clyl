@@ -28,9 +28,9 @@ public class Populator implements CommandLineRunner{
     public void run(String... args) throws Exception {
 
         Album graduation = new Album("Graduation", "/images/albumCover.jpg", "Def Jam Roc-A-Fella");
-        Album whiteAlbum = new Album("The White Album", "/images/albumCover.jpg", "Apple");
-        Album incredible = new Album("The Incredible True Story", "/images/albumCover.jpg", "Def Jam");
-        Album blackOnBothSides = new Album("Black on Both Sides", "/images/albumCover.jpg", "Rawkus");
+        Album whiteAlbum = new Album("The White Album", "/images/white-cover.jpg", "Apple");
+        Album incredible = new Album("The Incredible True Story", "/images/incredible-cover.jpg", "Def Jam");
+        Album blackOnBothSides = new Album("Black on Both Sides", "/images/bobs-cover.jpg", "Rawkus");
 
 
         albumRepo.save(graduation);
