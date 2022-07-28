@@ -59,6 +59,9 @@ function makeHomeViewFromJSON(albums){
 }
 function makeAlbumView(album) {
         console.log(album);
+        document.body.style.backgroundImage = `linear-gradient(black, black), url(${album.imgUrl})`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundBlendMode = "saturation";
         container.innerHTML = header();
         container.innerHTML += albumsView(album);
         container.innerHTML += footer();
@@ -68,6 +71,7 @@ function makeAlbumView(album) {
 
         const backButton = document.querySelector(".back-navigation");
         backButton.addEventListener("click",()=>{
+            document.body.style.backgroundImage = `none`;
             makeHomeView();
         })
 
