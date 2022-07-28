@@ -27,10 +27,10 @@ public class Populator implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-        Album graduation = new Album("Graduation", "/images/albumCover.jpg", "Def Jam Roc-A-Fella");
-        Album whiteAlbum = new Album("The White Album", "/images/white-cover.jpeg", "Apple");
-        Album incredible = new Album("The Incredible True Story", "/images/incredible-cover.jpeg", "Def Jam");
-        Album blackOnBothSides = new Album("Black on Both Sides", "/images/bobs-cover.jpg", "Rawkus");
+        Album graduation = new Album("Graduation", "./src/images/albumCover.jpg", "Def Jam Roc-A-Fella");
+        Album whiteAlbum = new Album("The White Album", "./src/images/white-cover.jpeg", "Apple");
+        Album incredible = new Album("The Incredible True Story", "./src/images/incredible-cover.jpeg", "Def Jam");
+        Album blackOnBothSides = new Album("Black on Both Sides", "./src/images/bobs-cover.jpg", "Rawkus");
 
 
         albumRepo.save(graduation);
