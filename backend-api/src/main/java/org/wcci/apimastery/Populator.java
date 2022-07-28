@@ -37,26 +37,25 @@ public class Populator implements CommandLineRunner{
         albumRepo.save(whiteAlbum);
         albumRepo.save(incredible);
         albumRepo.save(blackOnBothSides);
+        Song goodMorning = new Song("Good Morning", 195, graduation, "https://open.spotify.com/embed/track/6MXXY2eiWkpDCezVCc0cMH?utm_source=generator");
+        Song barryBonds = new Song("Barry Bonds", 243, graduation, "https://open.spotify.com/embed/track/7387VaiHpOsSIZ5nmjseya?utm_source=generator");
+        Song champion = new Song("Champion", 168, graduation, "https://open.spotify.com/embed/track/4UQMOPSUVJVicIQzjAcRRZ?utm_source=generator");
+        Song goodLife = new Song("Good Life", 207, graduation, "https://open.spotify.com/embed/track/4ZPdLEztrlZqbJkgHNw54L?utm_source=generator");
 
-        Song goodMorning = new Song("Good Morning", 195, graduation);
-        Song barryBonds = new Song("Barry Bonds", 243, graduation);
-        Song champion = new Song("Champion", 168, graduation);
-        Song goodLife = new Song("Good Life", 207, graduation);
+        Song blackBird = new Song("Black Bird", 138, whiteAlbum, "https://open.spotify.com/embed/track/5jgFfDIR6FR0gvlA56Nakr?utm_source=generator");
+        Song rockyRacoon = new Song("Rocky Raccoon", 201, whiteAlbum, "https://open.spotify.com/embed/track/1ITQbrueGLl581a25XXm9c?utm_source=generator");
+        Song ObLaDi = new Song("Ob-La-Di, Ob-La-Da", 189, whiteAlbum, "https://open.spotify.com/embed/track/1gFNm7cXfG1vSMcxPpSxec?utm_source=generator");
+        Song ussr = new Song("Back in the U.S.S.R.", 163, whiteAlbum, "https://open.spotify.com/embed/track/0j3p1p06deJ7f9xmJ9yG22?utm_source=generator");
 
-        Song blackBird = new Song("Black Bird", 138, whiteAlbum);
-        Song rockyRacoon = new Song("Rocky Raccoon", 201, whiteAlbum);
-        Song ObLaDi = new Song("Ob-La-Di, Ob-La-Da", 189, whiteAlbum);
-        Song ussr = new Song("Back in the U.S.S.R.", 163, whiteAlbum);
+        Song fadeAway = new Song("Fade Away", 288, incredible, "https://open.spotify.com/embed/track/4QRWA5UqYU1st9aO0UfxOj?utm_source=generator");
+        Song runIt = new Song("Run It", 201, incredible, "https://open.spotify.com/embed/track/4iq3zHwgHSxstFvYw4yIsQ?utm_source=generator");
+        Song likeWoah = new Song("Like Woah", 233, incredible, "https://open.spotify.com/embed/track/6bM3GKo47KVgvj3gHdWS0U?utm_source=generator");
+        Song stainless = new Song("Stainless", 200, incredible, "https://open.spotify.com/embed/track/5rwOE5J3Y1A2NiRa6y3Yph?utm_source=generator");
 
-        Song fadeAway = new Song("Fade Away", 288, incredible);
-        Song runIt = new Song("Run It", 201, incredible);
-        Song likeWoah = new Song("Like Woah", 233, incredible);
-        Song stainless = new Song("Stainless", 200, incredible);
-
-        Song mathematics = new Song("Mathematics", 246, blackOnBothSides);
-        Song got = new Song("Got", 208, blackOnBothSides);
-        Song habitat = new Song("Habitat", 280, blackOnBothSides);
-        Song love = new Song("Love", 283, blackOnBothSides);
+        Song mathematics = new Song("Mathematics", 246, blackOnBothSides, "https://open.spotify.com/embed/track/3gRlmtdCyNoKiyozn2pqc9?utm_source=generator");
+        Song got = new Song("Got", 208, blackOnBothSides, "https://open.spotify.com/embed/track/40JSjO17ltHsFWUlo2Y7Sc?utm_source=generator");
+        Song habitat = new Song("Habitat", 280, blackOnBothSides, "https://open.spotify.com/embed/track/18uybjGpRLZPrfX9SxceAW?utm_source=generator");
+        Song love = new Song("Love", 283, blackOnBothSides, "https://open.spotify.com/embed/track/1L6YNFDSQa8UjX7vzPXXD4?utm_source=generator");
 
         songRepo.save(goodMorning);
         songRepo.save(barryBonds);

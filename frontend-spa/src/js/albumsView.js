@@ -10,7 +10,10 @@ export default function albumsView(album){
                         album.songs.map(song => {
                             return `
                                 <div class="song">
-                                <img class="album-cover" src="./src${album.imgUrl}">
+                                <iframe style="border-radius:12px"
+        src="${song.src}" width="380"
+        height="380" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                                 <input type="hidden" class="id_field" value="${song.id}">
                                     <h3 class="song-title">${song.name}</h3>
                                     <button class="deleteSongButton">delete song</button>
@@ -24,6 +27,7 @@ export default function albumsView(album){
                 <div class="NewSongDiv">
                     <input type="text" placeholder="Song Name" class="songNameInput" \>
                     <input type="number" placeholder="Song Duration" class="songDurationInput" \>
+                    <input type="text" placeholder="src" class="songSrcInput" \>
                     
                     <button class="addsongButton">Add song</button>
                 </div>

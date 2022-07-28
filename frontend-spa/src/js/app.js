@@ -73,12 +73,14 @@ function makeAlbumView(album) {
 
         const songNameIn = container.querySelector(".songNameInput");
         const songSumIn = container.querySelector(".songDurationInput");
+        const songSrcIn = container.querySelector(".songSrcInput");
         const addSongButton = container.querySelector(".addsongButton");
 
         addSongButton.addEventListener("click",()=>{
             const newSongJson = {
                 "name": songNameIn.value,
                 "duration": songSumIn.value,
+                "src": songSrcIn.value,
             }
             fetch(`http://localhost:8080/api/albums/${album.id}/addSong`,{
                 method: 'POST',
