@@ -21,11 +21,13 @@ public class Song {
     private Album album;
     @OneToMany (mappedBy = "song", cascade = CascadeType.ALL,orphanRemoval = true)
     private Collection<Rating> ratings;
+    private String src;
 
-    public Song(String name, int duration, Album album) {
+    public Song(String name, int duration, Album album, String src) {
         this.name = name;
         this.duration = duration;
         this.album = album;
+        this.src = src;
     }
 
     public Song(){}
@@ -48,6 +50,10 @@ public class Song {
 
     public Album getAlbum() {
         return album;
+    }
+
+    public String getSrc() {
+        return src;
     }
 
     public void addAlbum(Album newAlbum){
