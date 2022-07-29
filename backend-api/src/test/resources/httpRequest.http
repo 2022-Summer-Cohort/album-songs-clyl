@@ -1,0 +1,70 @@
+### Get All Songs
+GET http://localhost:8080/api/songs
+Accept: application/json
+
+### get a song by id
+
+GET http://localhost:8080/api/songs/5
+Content-Type: application/json
+
+### get all albums
+
+GET http://localhost:8080/api/albums
+Content-Type: application/json
+
+### get album by id
+
+GET http://localhost:8080/api/albums/1
+Content-Type: application/json
+
+### add song to album
+POST http://localhost:8080/api/albums/1/addSong
+Content-Type: application/json
+
+{"name":"Lil Liban", "duration": 200}
+
+###add album
+POST http://localhost:8080/api/albums
+Content-Type: application/json
+
+{"title":"asdf", "imgUrl": "asdf.jpg", "recordLabel":"asdf"}
+
+### change name of song
+PATCH   http://localhost:8080//api/songs/5/name
+Content-Type: application/json
+
+Good Life
+
+### change title of album
+
+PATCH   http://localhost:8080//api/albums/1/title
+Content-Type: application/json
+
+new album title
+
+### all ratings
+
+GET   http://localhost:8080//api/ratings
+Content-Type: application/json
+
+### rating by id
+
+GET   http://localhost:8080//api/ratings/30
+Content-Type: application/json
+
+### add rating
+
+POST    http://localhost:8080//api/ratings/6
+Content-Type: application/json
+
+{"review":"i didnt like it", "rating": 1}
+
+### delete album by id
+
+DELETE http://localhost:8080//api/albums/1
+Content-Type: application/json
+
+###delete song by id
+
+DELETE http://localhost:8080//api/songs/5
+Content-Type: application/json

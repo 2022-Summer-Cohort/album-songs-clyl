@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Module 5 Project</title>
+</head>
+
+<body>
+    <div class="anchor">
+        <div class="container">
+
+            <div class="albums-container">
+
+
+                <div class="album">
+
+                    <br>
+                    <img src="./albumcover.jpg">
+                    <h2 class="album-title">Name</h2>
+                    <h3 class="album-recordLabel">Artist</h3>
+                </div>
+                <div class="album">
+
+                    <br>
+                    <img src="./albumcover.jpg">
+                    <div class="album-name">Name</div>
+                    <div class="album-artist">Artist</div>
+                </div>
+                <div class="album">
+
+                    <br>
+                    <img src="./albumcover.jpg">
+                    <div class="album-name">Name</div>
+                    <div class="album-artist">Artist</div>
+                </div>
+                <div class="album">
+
+                    <br>
+                    <img src="./albumcover.jpg">
+                    <div class="album-name">Name</div>
+                    <div class="album-artist">Artist</div>
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <div class="addSong">
+                    <h4>Add a song:</h4>
+                    <form action="">
+
+
+                        <label for="songName">Name:</label>
+                        <input type="text" id="songName" name="songName">
+
+                        <br>
+
+                        <label for="songDuration">Duration:</label>
+                        <input type="text" id="songDuration" name="songDuration">
+
+                        <br>
+                        <label for="songComment">Duration:</label>
+                        <input type="text" id="songComment" name="songComment">
+
+                        <br>
+
+                        <label for="songRating">Rate this song out of 5:</label>
+                        <select id="songRating" name="songRating" size="6">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+
+
+                        <input type="submit" value="Submit song">
+
+                    </form>
+                </div>
+            
+            <div class="addAlbum">
+                <h4>Add a album:</h4>
+                <form action="">
+
+
+                    <label for="albumTitle">Title:</label>
+                    <input type="text" id="albumTitle" name="albumTitle">
+
+                    <br>
+
+                    <label for="albumCover">Cover image:</label>
+                    <input type="text" id="albumCover" name="albumCover">
+
+                    <br>
+                    <label for="recordLabel">Record Label:</label>
+                    <input type="text" id="recordLabel" name="recordLabel">
+
+                    <input type="submit" value="Submit album">
+                </form>
+            </div>
+        </div>
+
+
+
+            <footer>footer</footer>
+        </div>
+
+    </div>
+    <script src="./src/js/app.js" type="module"></script>
+</body>
+
+</html>
